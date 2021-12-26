@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:permission_handler/permission_handler.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:youtubedlclient/gui.dart';
 
 late SharedPreferences prefs;
+
+Future _getStoragePermission() async {
+  if (await Permission.storage.request().isGranted) {
+    setState(() {
+      permissionGranted = true;
+    });
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
