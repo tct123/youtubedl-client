@@ -9,9 +9,12 @@ late SharedPreferences prefs;
 Future _getStoragePermission() async {
   if (await Permission.storage.request().isGranted) {
     setState(() {
-      permissionGranted = true;
+      var permissionGranted = true;
     });
   }
+}
+
+void setState(Null Function() param0) {
 }
 
 void main() async {
