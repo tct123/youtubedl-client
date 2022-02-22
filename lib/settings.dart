@@ -82,7 +82,7 @@ class _SettingsState extends State<Settings> {
               ),
             ),
             CheckboxListTile(
-              title: Text('Converter para mp3'),
+              title: Text('Convert to mp3'),
               value: _convertToMp3,
               onChanged: (n) {
                 _convertToMp3 = n!;
@@ -113,7 +113,7 @@ class _SettingsState extends State<Settings> {
               child: IgnorePointer(
                 ignoring: null == _keepOriginalFile,
                 child: CheckboxListTile(
-                  title: Text('Manter arquivo original'),
+                  title: Text('keep original file'),
                   value: _keepOriginalFile,
                   tristate: !_convertToMp3,
                   onChanged: (n) {
